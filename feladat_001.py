@@ -10,11 +10,18 @@ login_adatok = {
 
 def mentes(ssh):
     ssh.save_config()
+    
+    
+def set_enable_pass(ssh):
+    jelszo = input("Adj egy enable jelszót NOW: ")
+    ssh.send_config_set(f"enable password {jelszo}")
+
 
 
 #########################
 #        PROGRAM        #
 #########################
+
 
 
 try:
@@ -30,6 +37,11 @@ try:
             print("A mentés sikerült! Yay!!")
         else:
             print("A mentés nem sikerült.")
+        
+        #4. feladat
+        set_enable_pass(kapcsolat)
+        
+        print(kapcsolat.send_command("show run | include enable"))
 
 
 except Exception as ex:

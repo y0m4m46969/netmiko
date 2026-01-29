@@ -4,10 +4,10 @@
 2. Készenléti jel lekérdezése ✔
 
 
-3. Mentés NVRAM-ba
+3. Mentés NVRAM-ba ✔
 
 
-4. enable jelszó beállítása
+4. enable jelszó beállítása ✔
 
 
 5. jelszótitkosítás beállítása
