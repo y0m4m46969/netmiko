@@ -2,7 +2,7 @@ Building configuration...
 
 Current configuration : 1873 bytes
 !
-! Last configuration change at 08:53:26 UTC Thu Feb 5 2026 by binkslik
+! Last configuration change at 09:01:33 UTC Thu Feb 5 2026 by binkslik
 !
 version 15.2
 no service pad
@@ -15,7 +15,7 @@ hostname SW-BINK
 boot-start-marker
 boot-end-marker
 !
-enable password 7 151002020F19070D03
+enable password 7 030652050D3C0D6565
 !
 username binkslik privilege 15 password 7 070124584300120A4542595A
 no aaa new-model

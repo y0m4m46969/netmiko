@@ -24,6 +24,7 @@ def banner(ssh):
     ssh.send_config_set("banner motd -Jogosulatlanul bejelentkezni tilos!-")
     print(kapcsolat.send_command("show run | include banner"))
     print(kapcsolat.send_command("show run | include password"))
+    print(kapcsolat.send_command("show run | include secret"))
     
 def pvst(ssh):
     ssh.send_config_set("spanning-tree mode rapid-pvst")
