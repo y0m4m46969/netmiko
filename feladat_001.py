@@ -15,7 +15,19 @@ def mentes(ssh):
 def set_enable_pass(ssh):
     jelszo = input("Adj egy enable jelszót NOW: ")
     ssh.send_config_set(f"enable password {jelszo}")
-
+    
+def pass_titkos(ssh):
+    ssh.send_config_set("service password-encryption")
+    print(kapcsolat.send_command("show run | include enable"))
+    
+def banner(ssh):
+    ssh.send_config_set("banner motd -Jogosulatlanul bejelentkezni tilos!-")
+    print(kapcsolat.send_command("show run | include banner"))
+    print(kapcsolat.send_command("show run | include password"))
+    
+def pvst(ssh):
+    ssh.send_config_set("spanning-tree mode rapid-pvst")
+    print(kapcsolat.send_command("show run | include rapid"))
 
 
 #########################
@@ -42,6 +54,22 @@ try:
         set_enable_pass(kapcsolat)
         
         print(kapcsolat.send_command("show run | include enable"))
+
+        #5. feladat
+        pass_titkos(kapcsolat)
+        
+        #6. feladat
+        banner(kapcsolat)
+        
+        #7. feladat
+        pvst(kapcsolat)
+        
+        #8. feladat
+        try:
+            with open ("config-save.txt", "w", encoding="utf-8") as save:
+                save.write(kapcsolat.send_command("sh run"))
+        except Exception as ex:
+            print(f"Error: {ex}")
 
 
 except Exception as ex:

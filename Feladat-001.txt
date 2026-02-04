@@ -10,14 +10,14 @@
 4. enable jelszó beállítása ✔
 
 
-5. jelszótitkosítás beállítása
+5. jelszótitkosítás beállítása ✔
 
 
 6. banner motd beállítása
-   Beállított jelszavak listázása
+   Beállított jelszavak listázása ✔
 
 
-7. rapid PVST+ engedélyezése
+7. rapid PVST+ engedélyezése ✔
 
 
 8. Aktuális konfig lementése fájlba
