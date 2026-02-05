@@ -1,0 +1,11 @@
+line con 0
+ password konzolPass
+ logging synchronous
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end
