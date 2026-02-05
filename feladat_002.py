@@ -35,6 +35,7 @@ def console_pass(ssh):
             elem = elem.strip()
             con_pass.append(elem)
         con_pass.remove(szo)
+        # csinalok meg egy listat es abba teszem at az elem-et
         
     print(con_pass)
     
