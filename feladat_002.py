@@ -27,16 +27,47 @@ def console_pass(ssh):
     
     parancsok=["password", "login"]
     con_pass = connect.send_command("sh run | section line con")
-    if ("password" and "login" in con_pass):
-        print("Konzol jelszó és hitelesítés beállítása OK!")
-        con_pass = con_pass.split("\n")
-        print(con_pass)
+    con_pass = con_pass.split("\n")
+    
+    for szo in con_pass:
+        elem = szo
+        if "password" in elem or "login" in elem:
+            elem = elem.strip()
+            con_pass.append(elem)
+        con_pass.remove(szo)
+        
+    print(con_pass)
+    
+    
+    
+    if ("password" in con_pass):
+        
+        if con_pass.count("login") == 1:
+                print("Konzol jelszó és hitelesítés beállítása OK!")
+            
+        else:
+            print("Nincs login")
+            
     else:
-        for i in range (len(parancsok)):
-            if ("login local" in con_pass):
-                print("Login local van megadva sima login helyett!")
-            elif (parancsok[i] not in con_pass):
-                print(f"Szar, mert: {parancsok[i]} nincs megadva")
+        print(f"Nincs jelszó")
+            
+    
+    """for i in range (len(con_pass)):
+        
+        if ("password" in con_pass[i]):
+            if ("login" == con_pass[i+1]):
+                print("Konzol jelszó és hitelesítés beállítása OK!")
+                break
+            else:
+                print("Nincs login")
+                break
+        else:
+            print(f"Nincs jelszó")
+            break"""
+            
+
+            
+                
             
 
 
