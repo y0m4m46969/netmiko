@@ -1,4 +1,4 @@
-"""from netmiko import ConnectHandler
+from netmiko import ConnectHandler
 
 login = {
     "device_type": "cisco_ios",
@@ -20,7 +20,7 @@ def vlan(ssh):
                 "name Ugyvitel"
               ]
     ssh.send_config_set(parancsok)
-"""
+
 
 def console_pass():
     #ssh.save_config()
@@ -44,42 +44,18 @@ def console_pass():
         
     elif len(parancsok) < 2:
         
-        #ezt a reszt aznezni
-        if "password" in parancsok:
+        #ezt a reszt atnezni
+        if "password" in parancsok and "login" not in parancsok:
             print("Van jelszó, de nincs login")
         
         else:
             print("Van login, de nincs jelszó")
         #eddig
+        
     else:
         print("Semmilyen beállítás nincs (jelszó, login)")
     
     
-"""    if ("password" in con_pass):
-        
-        if con_pass.count("login") == 1:
-                print("Konzol jelszó és hitelesítés beállítása OK!")
-            
-        else:
-            print("Nincs login")
-            
-    else:
-        print(f"Nincs jelszó")
-            
-    for i in range (len(con_pass)):
-        
-        if ("password" in con_pass[i]):
-            if ("login" == con_pass[i+1]):
-                print("Konzol jelszó és hitelesítés beállítása OK!")
-                break
-            else:
-                print("Nincs login")
-                break
-        else:
-            print(f"Nincs jelszó")
-            break
-            
-      """      
             
 """def interface_db(ssh):
     interfaces = ssh.send_command("sh run | include int")
